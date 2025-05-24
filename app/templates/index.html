@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Inicio - Tienda Electrónica</title>
+</head>
+<body>
+{% extends 'base.html' %}
+
+{% block title %}Inicio - Tienda Electrónica{% endblock %}
+
+{% block content %}
+<header class="main-header">
+    <h2>Bienvenido a Logic</h2>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('index') }}">Inicio</a></li>
+            <li><a href="{{ url_for('registro_usuario') }}">Registrarse</a></li>
+            <li><a href="{{ url_for('login') }}">Iniciar Sesión</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="intro">
+    <p>Tu tienda electrónica de confianza. Encuentra productos al mejor precio.</p>
+</section>
+{% endblock %}
+
+
+
+</body>
+<footer>
+    <p>&copy; 2025 Tienda Electrónica</p>
+</footer>
+
+</html>
+

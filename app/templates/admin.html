@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="admin-panel">
+  <div class="navegacion-admin">
+    <a href="{{ url_for('catalogo') }}" class="btn">Ir al catálogo</a>
+    <a href="{{ url_for('logout') }}" class="btn-rojo">Cerrar sesión</a>
+</div>
+<p><a href="{{ url_for('registrar_admin') }}">Registrar nuevo administrador</a></p>
+  <h1>Administrar Productos</h1>
+
+
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <ul class="flash-messages">
+        {% for category, message in messages %}
+          <li class="{{ category }}">{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+
+  <table class="tabla-productos">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Descripción</th>
+        <th>Precio</th>
+        <th>Stock</th>
+        <th>Imagen</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for producto in productos %}
+      <tr>
+        <form method="POST" action="{{ url_for('actualizar_producto', id=producto.id) }}">
+          <td><input type="text" name="nombre" value="{{ producto.nombre }}"></td>
+          <td><input type="text" name="descripcion" value="{{ producto.descripcion }}"></td>
+          <td><input type="number" step="0.01" name="precio" value="{{ producto.precio }}"></td>
+          <td><input type="number" name="stock" value="{{ producto.stock }}"></td>
+          <td><input type="text" name="imagen" value="{{ producto.imagen }}"></td>
+          <td class="acciones">
+            <button type="submit" class="btn">Actualizar</button>
+        </form>
+        <form method="POST" action="{{ url_for('eliminar_producto', id=producto.id) }}" style="display:inline;">
+            <button type="submit" class="btn-rojo" onclick="return confirm('¿Eliminar producto?')">Eliminar</button>
+        </form>
+          </td>
+      </tr>
+      {% endfor %}
+
+      <!-- Formulario para agregar nuevo producto -->
+      <tr>
+        <form method="POST" action="{{ url_for('agregar_producto') }}">
+          <td><input type="text" name="nombre" placeholder="Nuevo nombre" required></td>
+          <td><input type="text" name="descripcion" placeholder="Descripción" required></td>
+          <td><input type="number" step="0.01" name="precio" placeholder="Precio" required></td>
+          <td><input type="number" name="stock" placeholder="Stock" required></td>
+          <td><input type="text" name="imagen" placeholder="imagen.jpg" required></td>
+          <td><button type="submit" class="btn-verde">Agregar</button></td>
+        </form>
+      </tr>
+    </tbody>
+  </table>
+</div>
+{% endblock %}
+
+

@@ -1,0 +1,599 @@
+/*ESTILOS PARA INDEX HTML*/
+body {
+  margin: 60%;
+  padding: 0;
+  padding-bottom: 60px; /* reserva espacio inferior para el footer */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #333;
+  color: #333;
+}
+
+h2 {
+font-size: 28px;
+text-align: center;
+margin-top: 30px;
+color: #eee;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.main-header {
+    background-color: #333;
+    color: #333;
+    padding: 20px 0;
+    text-align: center;
+}
+
+main {
+  min-height: 100vh;
+  padding-bottom: 90px; /* ajusta si el footer es más alto */
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-links li a:hover {
+    text-decoration: underline;
+}
+
+.intro {
+    text-align: center;
+    padding: 40px;
+    font-size: 1.2em;
+}
+
+/* Estilos para el footer en todas los templates del html */
+body {
+  padding-bottom: 100px; /* espacio para el footer */
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  color: #eee;
+  text-align: center;
+  padding: 15px ;
+  font-size: 14px;
+  z-index: 1000;
+}
+
+
+.main-content {
+  padding-bottom: 80px; /* espacio para evitar que el footer tape contenido */
+}
+
+.flash-messages {
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    text-align: center;
+    background-color: #ffeeba;
+    color: #856404;
+}
+/*finalizacion para el estilo del index*/
+
+
+/*ESTILOS PARA EL FORMULARIO DE LOGIN*/
+/* Estilo general del cuerpo */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f6f8;
+  color: #333;
+}
+
+/* Contenedor centrado del formulario */
+.form-container {
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Encabezado del formulario */
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+/* Etiquetas e inputs */
+.form-container label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.form-container input[type="email"],
+.form-container input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+/* Botón */
+.form-container button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-container button:hover {
+  background-color: #b15050;
+}
+
+/* Enlace inferior */
+.form-container p {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.form-container a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.form-container a:hover {
+  text-decoration: underline;
+}
+
+/* Mensajes flash */
+.flash-messages {
+  margin-top: 15px;
+  padding: 10px;
+  list-style-type: none;
+}
+
+.flash-messages li {
+  padding: 8px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+.flash-messages .success {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.flash-messages .danger {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+/* TERMINA EL ESTYuILO PARA EL LOGIN*/
+
+
+
+
+/*COMIENZA ESTILO PARA CATALOGO */
+    /* Encabezado del catálogo */
+.botones-superiores {
+display: flex;
+justify-content: flex-end;
+align-items: center;
+margin: 20px 40px 0;
+gap: 15px;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.botones-superiores .btn-secundario {
+background-color: #f0f0f0;
+color: #333;
+padding: 10px 16px;
+border-radius: 8px;
+text-decoration: none;
+font-weight: 600;
+transition: background-color 0.3s, color 0.3s;
+border: 1px solid #ccc;
+margin-bottom: 50px;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.botones-superiores .btn-secundario:hover {
+background-color: #b15050;
+color: #fff;
+border-color: #b15050;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+font-size: 28px;
+text-align: center;
+margin-top: 30px;
+color: #0a0a0a;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.catalogo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.producto {
+    border: 1px solid #ddd;
+    padding: 15px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.50);
+    border-radius: 15px;
+    background-color: #f9f9f9;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.producto img {  /* ESTILO IMAGENES DE LOS PRODUCTOS*/
+  max-width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Título y descripción */
+.producto h3 {
+  font-size: 18px;
+  margin: 10px 0 5px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.btn { /* boton de agregar carrito */
+    background-color: #333;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.btn:hover {   /* TIPO DE BACKGROUND PARA EL BOTON DE AGREGAR CARRITO*/ 
+    background-color: #b15050;
+}
+
+.flash-messages {
+    list-style: none;
+    padding: 0;
+    margin: 10px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.mensaje-flotante { 
+    position: fixed; 
+    top: 20px; 
+    right: 20px; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #4CAF50; 
+    color: white; 
+    padding: 16px 24px; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3); 
+    z-index: 9999; 
+    font-weight: bold; 
+    opacity: 1; 
+    animation: fadeOut 4s forwards; } @keyframes 
+    fadeOut { 0% { opacity: 1; } 80% { opacity: 1; } 100% { opacity: 0; display: none; } }
+
+/*FINAL ESTILO PARA EL CATALOGO/*
+
+
+
+/* ESTILOS PARA APARTADO DE CARRITO DE COMPRAS*/
+
+.carrito-container {
+max-width: 900px;
+margin: 50px auto;
+background: #fff;
+padding: 25px;
+border-radius: 12px;
+box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+}
+
+.tabla-carrito {
+width: 100%;
+border-collapse: collapse;
+margin-bottom: 20px;
+}
+
+.tabla-carrito th, .tabla-carrito td {
+border: 1px solid #ddd;
+padding: 12px;
+text-align: center;
+}
+
+.tabla-carrito th {
+background-color: #f0f0f0;
+}
+
+.btn {
+background-color: #333;
+color: white;
+padding: 10px 18px;
+text-decoration: none;
+border-radius: 6px;
+font-weight: bold;
+display: inline-block;
+}
+
+.btn:hover {
+background-color: #b15050;
+;
+}
+
+.btn-secundario {
+background-color: #f4f4f4;
+color: #333;
+padding: 8px 14px;
+border: 1px solid #ccc;
+border-radius: 6px;
+text-decoration: none;
+margin-top: 10px;
+}
+
+.btn-secundario:hover {
+background-color: #e0e0e0;
+}
+
+.btn-mini {
+padding: 6px 12px;
+font-size: 14px;
+background-color: #333;
+color: white;
+border: none;
+border-radius: 6px;
+cursor: pointer;
+}
+
+.btn-mini:hover {
+background-color: #333;
+}
+
+.btn-eliminar {
+background-color: #333;
+color: white;
+padding: 6px 12px;
+font-size: 14px;
+border: none;
+border-radius: 6px;
+cursor: pointer;
+}
+
+.btn-eliminar:hover {
+background-color: #c82333;
+}
+
+.form-cantidad {
+display: flex;
+gap: 8px;
+justify-content: center;
+align-items: center;
+}
+
+/* FINAL CARRITO DE ESTILO PARA COMPRAS */
+
+
+/* COMIENZO ESTILO FINALIZACION DE COMPRA*/
+
+.finalizar-compra-container {
+max-width: 800px;
+margin: 40px auto;
+background: #fff;
+padding: 30px;
+border-radius: 12px;
+box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.tabla-compra {
+width: 100%;
+border-collapse: collapse;
+margin-bottom: 20px;
+}
+
+.tabla-compra th, .tabla-compra td {
+padding: 12px;
+border: 1px solid #ddd;
+text-align: center;
+}
+
+.form-metodo-pago {
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
+
+.form-metodo-pago select,
+.form-metodo-pago input {
+padding: 10px;
+border-radius: 8px;
+border: 1px solid #ccc;
+}
+
+.campos-metodo {
+display: none;
+flex-direction: column;
+margin-top: 10px;
+gap: 8px;
+}
+/*FINALIZACION ESTILO PARA FINALIZACION DE COMPRA */
+
+
+
+
+/*COMPRA EXITOSA ESTILO */
+
+mensaje-compra-exitosa {
+max-width: 600px;
+margin: 100px auto;
+padding: 30px;
+background-color: #f4fdf4;
+border: 1px solid #b0e3b0;
+border-radius: 12px;
+box-shadow: 0 0 15px rgba(0, 128, 0, 0.1);
+text-align: center;
+}
+
+.mensaje-compra-exitosa h1 {
+color: #2e7d32;
+margin-bottom: 20px;
+}
+
+.metodo-pago-info {
+margin-top: 10px;
+color: #444;
+font-weight: bold;
+}
+
+.botones-compra-exitosa {
+margin-top: 30px;
+}
+
+.botones-compra-exitosa a {
+margin: 0 10px;
+}
+/* Estilo específico para el texto del método de pago para destacarlo */
+p.metodo-pago-info {
+font-weight: bold; /* Texto en negrita */
+color: #333; /* Un color más oscuro */
+ margin-top: 10px;
+margin-bottom: 25px; /* Espacio antes de los botones */
+}
+    
+/* FINAL COMPRA EXITOSA ESTILO */
+
+
+/* ESTILO DE MODULO PARA ADMINISTRADOR */
+.admin-panel {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.admin-panel h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+/* Estilo de tabla de productos */
+.tabla-productos {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 15px;
+}
+
+.tabla-productos thead {
+  background-color: #333;
+  color: white;
+}
+
+.tabla-productos th, .tabla-productos td {
+  border: 1px solid #ddd;
+  padding: 12px 10px;
+  text-align: center;
+}
+
+.tabla-productos input[type="text"],
+.tabla-productos input[type="number"] {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* Botones */
+.btn, .btn-rojo, .btn-verde {
+  padding: 15px 16px;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn {
+  background-color: #333;
+}
+
+.btn-rojo {
+  background-color: #b15050;
+}
+
+.btn-verde {
+  background-color: #28a745;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+.btn-rojo:hover {
+  background-color: #c82333;
+}
+
+.btn-verde:hover {
+  background-color: #218838;
+}
+
+/* Mensajes flash */
+.flash-messages {
+  list-style: none;
+  padding: 10px;
+  margin: 10px auto;
+  max-width: 600px;
+}
+
+.flash-messages li {
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+}
+
+.flash-messages .success {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.flash-messages .danger {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+
+
+/* FINAL ESTILO MODULO ADMIN */
+
+

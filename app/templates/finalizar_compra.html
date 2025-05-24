@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="finalizar-compra-container">
+    <h1>Resumen de Compra</h1>
+
+    <table class="tabla-compra">
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Precio</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in items %}
+            <tr>
+                <td>{{ item.nombre }}</td>
+                <td>{{ item.cantidad }}</td>
+                <td>${{ "{:,.2f}".format(item.precio) }}</td>
+                <td>${{ "{:,.2f}".format(item.total) }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h3>Total General: ${{ "{:,.0f}".format(total) }}</h3>
+
+    <form method="POST" action="{{ url_for('finalizar_compra') }}" class="form-metodo-pago">
+        <label for="metodo_pago">Método de pago:</label>
+        <select name="metodo_pago" id="metodo_pago" required onchange="mostrarCamposPago()">
+            <option value="">Selecciona un método de pago</option>
+            <option value="Tarjeta">Tarjeta</option>
+            <option value="Nequi">Nequi</option>
+            <option value="Daviplata">Daviplata</option>
+        </select>
+
+        <div id="campos_tarjeta" class="campos-metodo" style="display:none;">
+            <label>Número de Tarjeta:</label>
+            <input type="text" name="numero_tarjeta">
+            <label>CVV:</label>
+            <input type="text" name="cvv">
+            <label>Fecha Expiración:</label>
+            <input type="month" name="expiracion">
+        </div>
+
+        <div id="campos_nequi" class="campos-metodo" style="display:none;">
+            <label>Número de Nequi:</label>
+            <input type="text" name="numero_nequi">
+        </div>
+
+        <div id="campos_daviplata" class="campos-metodo" style="display:none;">
+            <label>Número de Daviplata:</label>
+            <input type="text" name="numero_daviplata">
+        </div>
+
+        <button type="submit" class="btn">Confirmar y Pagar</button>
+    </form>
+
+    <p><a href="{{ url_for('ver_carrito') }}" class="btn-secundario">← Volver al carrito</a></p>
+</div>
+
+<script>
+function mostrarCamposPago() {
+    const metodo = document.getElementById('metodo_pago').value;
+    document.getElementById('campos_tarjeta').style.display = metodo === 'Tarjeta' ? 'block' : 'none';
+    document.getElementById('campos_nequi').style.display = metodo === 'Nequi' ? 'block' : 'none';
+    document.getElementById('campos_daviplata').style.display = metodo === 'Daviplata' ? 'block' : 'none';
+}
+</script>
+{% endblock %}
+

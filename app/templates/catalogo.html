@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Catálogo de Productos Electrónicos</h1>
+
+<div class="botones-superiores">
+  <a href="{{ url_for('ver_carrito') }}" class="btn-secundario">Ver Carrito</a>
+  <a href="{{ url_for('logout') }}" class="btn-secundario">Cerrar sesión</a>
+</div>
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <ul class="flash-messages">
+      {% for category, message in messages %}
+        <li class="{{ category }}">{{ message }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
+<div class="catalogo">
+  {% for producto in productos %}
+  <div class="producto">
+    <img src="{{ url_for('static', filename='img/productos/' ~ producto['imagen']) }}" alt="{{ producto['nombre'] }}" width="200">
+    <h3>{{ producto['nombre'] }}</h3>
+    <p>{{ producto['descripcion'] }}</p>
+    <p><strong>Precio:</strong> ${{ "{:,.0f}".format(producto['precio']) }}</p>
+    <p><strong>Stock disponible:</strong> {{ producto['stock'] }}</p>
+
+    {% if producto['stock'] > 0 %}
+    <form method="POST" action="{{ url_for('agregar_carrito', producto_id=producto['id']) }}">
+      <input type="number" name="cantidad" value="1" min="1" max="{{ producto['stock'] }}">
+      <button class="btn" type="submit">Agregar al carrito</button>
+    </form>
+    {% else %}
+    <p style="color: red;"><strong>Agotado</strong></p>
+    {% endif %}
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
+
+
+
+
+

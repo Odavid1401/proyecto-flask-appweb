@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+{% extends "base.html" %}
+
+{% block title %}Iniciar Sesión - Logic{% endblock %}
+
+{% block content %}
+<div class="form-container">
+  <h2>Iniciar Sesión</h2>
+  <form method="POST" action="{{ url_for('login') }}">
+    <label for="correo">Correo:</label>
+    <input type="email" name="correo" required>
+
+    <label for="password">Contraseña:</label>
+    <input type="password" name="password" required>
+
+    <button type="submit">Entrar</button>
+  </form>
+
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <ul class="flash-messages">
+        {% for category, message in messages %}
+          <li class="{{ category }}">{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+
+  <p>¿No tienes cuenta? <a href="{{ url_for('registro_usuario') }}">Regístrate</a></p>
+</div>
+{% endblock %}
+        </body>
+</html>
+
+
+

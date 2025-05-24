@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="carrito-container"> <h1>Carrito de Compras</h1>
+{% if items %}
+<table class="tabla-carrito">
+<thead>
+<tr>
+<th>Producto</th>
+<th>Precio unitario</th>
+<th>Cantidad</th>
+<th>Total</th>
+<th>Acciones</th>
+</tr>
+</thead>
+<tbody>
+{% for item in items %}
+<tr>
+<td>{{ item.nombre }}</td>
+<td>${{ "{:,.0f}".format(item.precio) }}</td>
+<td>
+<form method="POST" action="{{ url_for('actualizar_carrito', id=item.id) }}" class="form-cantidad">
+<input type="number" name="nueva_cantidad" value="{{ item.cantidad }}" min="1">
+<button type="submit" class="btn-mini">Actualizar</button>
+</form>
+</td>
+<td>${{ "{:,.0f}".format(item.total) }}</td>
+<td>
+<form method="POST" action="{{ url_for('eliminar_del_carrito', id=item.id) }}">
+<button type="submit" class="btn-eliminar">Eliminar</button>
+</form>
+</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+<h3>Total general: ${{ "{:,.0f}".format(total) }}</h3>
+<a href="{{ url_for('finalizar_compra') }}" class="btn">Continuar</a>
+{% else %}
+<p>Tu carrito está vacío.</p>
+{% endif %}
+
+<p><a href="{{ url_for('catalogo') }}" class="btn-secundario">← Seguir comprando</a></p> </div> {% endblock %}

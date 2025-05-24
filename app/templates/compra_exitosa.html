@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Gracias por tu compra - Tienda Electrónica</title> {# Título claro para la pestaña del navegador #}
+    {% extends "base.html" %}
+
+{% block content %}
+
+<div class="mensaje-compra-exitosa"> <h1>¡Gracias por tu compra!</h1> 
+                <p>Tu pedido ha sido procesado con éxito.</p>
+            {% if metodo_pago_usado %}
+            <p class="metodo-pago-info">Método de pago utilizado: <strong>{{ metodo_pago_usado }}</strong></p>
+            {% endif %}
+
+            <p>¡Esperamos verte de nuevo pronto!</p>
+
+            <div class="botones-compra-exitosa">
+                <a href="{{ url_for('catalogo') }}" class="btn">Volver al catálogo</a>
+                <a href="{{ url_for('logout') }}" class="btn-secundario">Cerrar sesión</a>
+            </div>
+
+</div> {% endblock %}
